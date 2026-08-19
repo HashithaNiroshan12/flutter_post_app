@@ -11,16 +11,16 @@ void main() {
     test('configure_withStaging_setsEnvironmentAndValues', () {
       AppConfig.configure(
         environment: AppEnvironment.staging,
-        apiBaseUrl: 'https://staging.example.com',
+        apiBaseUrl: 'https://dummyjson.com',
         paginationLimit: 15,
-        searchDebounceMs: 400,
+        searchDebounceMs: 500,
       );
 
       expect(AppConfig.environment, AppEnvironment.staging);
       expect(AppConfig.environmentName, 'STAGING');
-      expect(AppConfig.apiBaseUrl, 'https://staging.example.com');
+      expect(AppConfig.apiBaseUrl, 'https://dummyjson.com');
       expect(AppConfig.paginationLimit, 15);
-      expect(AppConfig.searchDebounceMs, 400);
+      expect(AppConfig.searchDebounceMs, 500);
     });
 
     test('configure_withProduction_setsProduction', () {
